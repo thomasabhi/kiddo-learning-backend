@@ -1,12 +1,12 @@
 import express from "express";
 // import { getContent } from "../controllers/content.controller";
 import { upload } from "../middleware/multer,middleware";
-import { getContent } from "../controllers/content.controller";
+import { getContents } from "../controllers/content.controller";
 
 const router = express.Router();
 
 
-router.route("/").get(getContent);
+router.route("/").get(getContents);
 router.route("/").post(upload.fields([
     {
         name: "image",

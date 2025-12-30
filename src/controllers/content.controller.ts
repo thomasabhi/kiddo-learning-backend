@@ -32,7 +32,7 @@ export const createContent = async (req: Request, res: Response) => {
 
 
 
-export const getContent = async (req: Request, res: Response) => {
+export const getContents = async (req: any, res: Response) => {
   try {
     const type = req.query.type?.toString().toLowerCase();
     const limit = Number(req.query.limit ?? 10);
