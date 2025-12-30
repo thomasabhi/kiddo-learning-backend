@@ -29,25 +29,34 @@ export const createContent = async (req: Request, res: Response) => {
 };
 
 
-export const getContent = async (req: any, res: Response) => {
-  try {
-    const content = await Content.find({});
 
-    // Group content by type
-    const groupedContent = content.reduce((acc: any, item: any) => {
-      const type = item.type; // "letter" | "number" | ...
-      if (!acc[type]) {
-        acc[type] = [];
-      }
-      acc[type].push(item);
-      return acc;
-    }, {});
+
+export const getContent = async (req: Request, res: Response) => {
+  try {
+    const { type, limit = 10, page = 1 } = req.query;
+
+    const query: any = {};
+    if (type) query.type = type;
+
+    // Count total items
+    const total = await Content.countDocuments(query);
+
+    // Pagination
+    const skip = (Number(page) - 1) * Number(limit);
+
+    const items = await Content.find(query)
+      .skip(skip)
+      .limit(Number(limit));
 
     return res.status(200).json({
       success: true,
-      content: groupedContent,
+      page: Number(page),
+      limit: Number(limit),
+      total,
+      totalPages: Math.ceil(total / Number(limit)),
+      content: items,
     });
-  } catch (error) {
-    res.status(400).json({ error });
+  } catch (error: any) {
+    res.status(400).json({ error: error.message });
   }
 };
