@@ -1,0 +1,22 @@
+[
+  { "_id": "651c60000000000000000001", "type": "fruit", "title": "Apple", "question": "Apple fruit", "imageUrl": "uploads/apple_fruit.png", "soundUrl": "uploads/apple.mp3" },
+  { "_id": "651c60000000000000000002", "type": "fruit", "title": "Banana", "question": "Banana fruit", "imageUrl": "uploads/banana.png", "soundUrl": "uploads/banana.mp3" },
+  { "_id": "651c60000000000000000003", "type": "fruit", "title": "Cherry", "question": "Cherry fruit", "imageUrl": "uploads/cherry.png", "soundUrl": "uploads/cherry.mp3" },
+  { "_id": "651c60000000000000000004", "type": "fruit", "title": "Date", "question": "Date fruit", "imageUrl": "uploads/date.png", "soundUrl": "uploads/date.mp3" },
+  { "_id": "651c60000000000000000005", "type": "fruit", "title": "Grapes", "question": "Grapes fruit", "imageUrl": "uploads/grapes.png", "soundUrl": "uploads/grapes.mp3" },
+  { "_id": "651c60000000000000000006", "type": "fruit", "title": "Guava", "question": "Guava fruit", "imageUrl": "uploads/guava.png", "soundUrl": "uploads/guava.mp3" },
+  { "_id": "651c60000000000000000007", "type": "fruit", "title": "Kiwi", "question": "Kiwi fruit", "imageUrl": "uploads/kiwi.png", "soundUrl": "uploads/kiwi.mp3" },
+  { "_id": "651c60000000000000000008", "type": "fruit", "title": "Lemon", "question": "Lemon fruit", "imageUrl": "uploads/lemon.png", "soundUrl": "uploads/lemon.mp3" },
+  { "_id": "651c60000000000000000009", "type": "fruit", "title": "Mango", "question": "Mango fruit", "imageUrl": "uploads/mango.png", "soundUrl": "uploads/mango.mp3" },
+  { "_id": "651c6000000000000000000a", "type": "fruit", "title": "Orange", "question": "Orange fruit", "imageUrl": "uploads/orange.png", "soundUrl": "uploads/orange.mp3" },
+  { "_id": "651c6000000000000000000b", "type": "fruit", "title": "Papaya", "question": "Papaya fruit", "imageUrl": "uploads/papaya.png", "soundUrl": "uploads/papaya.mp3" },
+  { "_id": "651c6000000000000000000c", "type": "fruit", "title": "Peach", "question": "Peach fruit", "imageUrl": "uploads/peach.png", "soundUrl": "uploads/peach.mp3" },
+  { "_id": "651c6000000000000000000d", "type": "fruit", "title": "Pear", "question": "Pear fruit", "imageUrl": "uploads/pear.png", "soundUrl": "uploads/pear.mp3" },
+  { "_id": "651c6000000000000000000e", "type": "fruit", "title": "Pineapple", "question": "Pineapple fruit", "imageUrl": "uploads/pineapple.png", "soundUrl": "uploads/pineapple.mp3" },
+  { "_id": "651c6000000000000000000f", "type": "fruit", "title": "Plum", "question": "Plum fruit", "imageUrl": "uploads/plum.png", "soundUrl": "uploads/plum.mp3" },
+  { "_id": "651c60000000000000000010", "type": "fruit", "title": "Strawberry", "question": "Strawberry fruit", "imageUrl": "uploads/strawberry.png", "soundUrl": "uploads/strawberry.mp3" },
+  { "_id": "651c60000000000000000011", "type": "fruit", "title": "Watermelon", "question": "Watermelon fruit", "imageUrl": "uploads/watermelon.png", "soundUrl": "uploads/watermelon.mp3" },
+  { "_id": "651c60000000000000000012", "type": "fruit", "title": "Blueberry", "question": "Blueberry fruit", "imageUrl": "uploads/blueberry.png", "soundUrl": "uploads/blueberry.mp3" },
+  { "_id": "651c60000000000000000013", "type": "fruit", "title": "Raspberry", "question": "Raspberry fruit", "imageUrl": "uploads/raspberry.png", "soundUrl": "uploads/raspberry.mp3" },
+  { "_id": "651c60000000000000000014", "type": "fruit", "title": "Blackberry", "question": "Blackberry fruit", "imageUrl": "uploads/blackberry.png", "soundUrl": "uploads/blackberry.mp3" }
+]
