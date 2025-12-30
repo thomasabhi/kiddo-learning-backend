@@ -1,7 +1,7 @@
 import fs from "fs";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import Content from "./models/content.model"
+import Content from "../models/content.model"
 dotenv.config();
 
 const MONGO_URI = process.env.DB_CONNECTION!;

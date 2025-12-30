@@ -1,8 +1,8 @@
 import express from "express"
 import dotenv from "dotenv"
 import morgan from "morgan"
-import { connectDB } from "./src/DB/config";
-import contentRoute from "./src/routes/content.routes"
+import { connectDB } from "./DB/config";
+import contentRoute from "./routes/content.routes"
 import cors from "cors"
 import path from "path";
 
@@ -27,7 +27,9 @@ app.use(cors({
 app.use(morgan("dev"))
 
 app.use("/api/v1/content",contentRoute)
+app.use("/uploads", express.static("uploads"));
 
 
-
-app.listen(5000,'0.0.0.0', () => console.log('Server running on port 5000'));
+app.listen(port,() => {
+    console.log(`Server started listening at port ${port}`)
+})
