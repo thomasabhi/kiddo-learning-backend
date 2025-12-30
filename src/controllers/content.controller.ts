@@ -31,32 +31,36 @@ export const createContent = async (req: Request, res: Response) => {
 
 
 
+
 export const getContent = async (req: Request, res: Response) => {
   try {
-    const { type, limit = 10, page = 1 } = req.query;
+    const type = req.query.type?.toString().toLowerCase();
+    const limit = Number(req.query.limit ?? 10);
+    const page = Number(req.query.page ?? 1);
 
-    const query: any = {};
-    if (type) query.type = type;
+    if (!type) {
+      return res.status(400).json({ error: "Type query parameter is required" });
+    }
 
-    // Count total items
+    const query = { type };
+
     const total = await Content.countDocuments(query);
-
-    // Pagination
-    const skip = (Number(page) - 1) * Number(limit);
+    const skip = (page - 1) * limit;
 
     const items = await Content.find(query)
       .skip(skip)
-      .limit(Number(limit));
+      .limit(limit);
 
-    return res.status(200).json({
+    res.status(200).json({
       success: true,
-      page: Number(page),
-      limit: Number(limit),
+      page,
+      limit,
       total,
-      totalPages: Math.ceil(total / Number(limit)),
+      totalPages: Math.ceil(total / limit),
       content: items,
     });
   } catch (error: any) {
     res.status(400).json({ error: error.message });
   }
 };
+

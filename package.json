@@ -4,7 +4,7 @@
   "main": "dist/app.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node dist/app.js",
+    "start": "nodemon dist/app.js",
     "build": "tsc",
     "dev": "ts-node-dev src/app.ts"
   },
