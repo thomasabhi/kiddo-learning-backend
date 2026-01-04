@@ -6,11 +6,15 @@ import path from "path";
 import contentRoute from "./routes/content.routes";
 import adminRoute from "./routes/admin.routes";
 import { connectDB } from "./DB/config";
+import NodeCache from 'node-cache';
+
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 6000;
+export const cache = new NodeCache({ stdTTL: 3600, checkperiod: 600 });
+
 
 connectDB();
 
