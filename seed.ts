@@ -1,44 +1,42 @@
-import fs from "fs";
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-import {Content} from "./src/models/content.model";
-import cloudinary from "cloudinary";
+// import fs from "fs";
+// import mongoose from "mongoose";
+// import dotenv from "dotenv";
+// import { Content } from "./src/models/content.model";
+// import cloudinary from "cloudinary";
 
-dotenv.config();
+// dotenv.config();
 
 // const MONGO_URI = process.env.DB_CONNECTION!;
 
-cloudinary.v2.config({
-  cloud_name: process.env.CLOUD_NAME,
-  api_key: process.env.CLOUD_API_KEY,
-  api_secret: process.env.CLOUD_API_SECRET,
-  secure: true,
-});
+// cloudinary.v2.config({
+//   cloud_name: process.env.CLOUD_NAME,
+//   api_key: process.env.CLOUD_API_KEY,
+//   api_secret: process.env.CLOUD_API_SECRET,
+//   secure: true,
+// });
 
-const loadSeed = async (filePath: string) => {
-  const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+// const loadSeed = async (filePath: string) => {
+//   const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
-  for (const item of data) {
-    let imageUrl = item.imageUrl || "";
+//   for (const item of data) {
+//     let imageUrl = item.imageUrl || "";
 
-    // Upload to Cloudinary if local image exists
-    if (item.imageFile) {
-      const uploadResult = await cloudinary.v2.uploader.upload(item.imageFile, {
-        folder: "contents",
-      });
-      imageUrl = uploadResult.secure_url;
+//     // Upload to Cloudinary if local image exists
+//     if (item.imageFile) {
+//       const uploadResult = await cloudinary.v2.uploader.upload(item.imageFile, {
+//         folder: "contents",
+//       });
+//       imageUrl = uploadResult.secure_url;
+//       console.log(`Uploaded ${item.title || "no-title"} -> ${imageUrl}`);
+//     }
 
-      // ✅ Log the URL after upload
-      console.log(`Uploaded ${item.title || "no-title"} -> ${imageUrl}`);
-    }
-
-    // Save to MongoDB
-    await Content.create({
-      ...item,
-      imageUrl,
-    });
-  }
-};
+//     // Save to MongoDB
+//     await Content.create({
+//       ...item,
+//       imageUrl,
+//     });
+//   }
+// };
 
 // const run = async () => {
 //   try {
@@ -55,7 +53,7 @@ const loadSeed = async (filePath: string) => {
 
 //     console.log("Seeding finished!");
 //   } catch (error) {
-//     console.error(error);
+//     console.error("Seeding error:", error);
 //   } finally {
 //     await mongoose.disconnect();
 //   }
