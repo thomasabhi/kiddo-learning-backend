@@ -8,5 +8,6 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src", "seed.ts"]
+  "include": ["src/**/*.ts", "src/types/**/*.d.ts"]
+
 }

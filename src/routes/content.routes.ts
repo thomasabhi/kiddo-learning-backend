@@ -1,13 +1,13 @@
 import express from "express";
-// import { getContent } from "../controllers/content.controller";
 import { upload } from "../middleware/multer,middleware";
-import { getContents } from "../controllers/content.controller";
+import { getContent, getContents } from "../controllers/content.controller";
+import { adminOnly } from "../middleware/auth.middleware";
 
 const router = express.Router();
 
 
 router.route("/").get(getContents);
-router.route("/").post(upload.fields([
+router.route("/").post(adminOnly,upload.fields([
     {
         name: "image",
         maxCount: 1
@@ -23,5 +23,6 @@ router.route("/").post(upload.fields([
     
 ]))
 
+router.route("/").get(adminOnly,getContent)
 
 export default router

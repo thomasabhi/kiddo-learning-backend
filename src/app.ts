@@ -1,35 +1,35 @@
-import express from "express"
-import dotenv from "dotenv"
-import morgan from "morgan"
-import { connectDB } from "./DB/config";
-import contentRoute from "./routes/content.routes"
-import cors from "cors"
+import express from "express";
+import dotenv from "dotenv";
+import morgan from "morgan";
+import cors from "cors";
 import path from "path";
+import contentRoute from "./routes/content.routes";
+import NodeCache from "node-cache";
 
-dotenv.config()
+import { connectDB } from "./DB/config";
+
+dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 6000;
 
-const port = process.env.PORT || 7003
-connectDB()
+// TTL: 60 seconds by default
+export const cache = new NodeCache({ stdTTL: 60, checkperiod: 120 });
 
-// / Serve files in /uploads as static files
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// Connect to MongoDB
+connectDB();
 
-app.use(express.json())
-app.use(express.urlencoded({
-    extended: true
-}))
-app.use(cors({
-    origin: "*",
-    credentials: true
-}))
-app.use(morgan("dev"))
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+app.use(morgan("dev"));
 
-app.use("/api/v1/content",contentRoute)
-app.use("/uploads", express.static("uploads"));
+// Serve uploads folder
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
+// Routes
+app.use("/api/v1/content", contentRoute);
 
-app.listen(port,() => {
-    console.log(`Server started listening at port ${port}`)
-})
+// Start server
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
