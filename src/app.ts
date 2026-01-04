@@ -27,7 +27,7 @@ app.use(cors());
 app.use(morgan("dev"));
 
 // Serve uploads folder
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.use('/uploads', express.static(path.join(__dirname, 'src/uploads')));
 
 // Routes
 app.use("/api/v1/user",adminRoute)
