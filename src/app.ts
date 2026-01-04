@@ -5,6 +5,7 @@ import cors from "cors";
 import path from "path";
 import contentRoute from "./routes/content.routes";
 import NodeCache from "node-cache";
+import adminRoute from "./routes/admin.routes"
 
 import { connectDB } from "./DB/config";
 
@@ -29,6 +30,7 @@ app.use(morgan("dev"));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Routes
+app.use("/api/v1/user",adminRoute)
 app.use("/api/v1/content", contentRoute);
 
 // Start server
