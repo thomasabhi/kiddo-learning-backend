@@ -18,7 +18,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // FIX: Allow all origins so your mobile app/emulator can connect
-app.use(cors()); 
+app.use(cors({
+  origin: "*", // Allows any device to connect
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 app.use(morgan("dev"));
 app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
