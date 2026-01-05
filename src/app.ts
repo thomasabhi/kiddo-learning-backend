@@ -13,7 +13,7 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 6000;
-export const cache = new NodeCache({ stdTTL: 3600, checkperiod: 600 });
+export const cache = new NodeCache();
 
 
 connectDB();
