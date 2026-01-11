@@ -7,19 +7,12 @@ const router = express.Router();
 
 
 router.route("/").get(getContents);
-router.route("/").post(adminOnly,upload.fields([
+router.route("/create").post(adminOnly,upload.fields([
     {
         name: "image",
         maxCount: 1
-    },
-    {
-        name: "sound",
-        maxCount: 1
-    },
-    {
-        name: "animate",
-        maxCount: 1
     }
+   
     
 ]))
 
