@@ -49,7 +49,9 @@ const run = async () => {
     await loadSeed("./src/seeds/math.json");
     await loadSeed("./src/seeds/flowers.json");
     await loadSeed("./src/seeds/fruit.json");
-    await loadSeed("./src/seeds/vegatbles.json");
+    await loadSeed("./src/seeds/vegetables.json");
+    await loadSeed("./src/seeds/bird.json");
+    // await loadSeed("./src/seeds/insect.json");
 
     console.log("Seeding finished!");
   } catch (error) {
