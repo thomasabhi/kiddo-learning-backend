@@ -1,0 +1,22 @@
+[
+  { "_id": "654c82000000000000000001", "type": "insect", "title": "Butterfly", "imageUrl": "🦋" },
+  { "_id": "654c82000000000000000002", "type": "insect", "title": "Bee", "imageUrl": "🐝" },
+  { "_id": "654c82000000000000000003", "type": "insect", "title": "Ladybug", "imageUrl": "🐞" },
+  { "_id": "654c82000000000000000004", "type": "insect", "title": "Dragonfly", "imageUrl": "🪰" },
+  { "_id": "654c82000000000000000005", "type": "insect", "title": "Ant", "imageUrl": "🐜" },
+  { "_id": "654c82000000000000000006", "type": "insect", "title": "Grasshopper", "imageUrl": "🦗" },
+  { "_id": "654c82000000000000000007", "type": "insect", "title": "Cockroach", "imageUrl": "🪳" },
+  { "_id": "654c82000000000000000008", "type": "insect", "title": "Mosquito", "imageUrl": "🦟" },
+  { "_id": "654c82000000000000000009", "type": "insect", "title": "Fly", "imageUrl": "🪰" },
+  { "_id": "654c8200000000000000000a", "type": "insect", "title": "Cricket", "imageUrl": "🦗" },
+  { "_id": "654c8200000000000000000b", "type": "insect", "title": "Firefly", "imageUrl": "🐞" },
+  { "_id": "654c8200000000000000000c", "type": "insect", "title": "Cicada", "imageUrl": "🪲" },
+  { "_id": "654c8200000000000000000d", "type": "insect", "title": "Moth", "imageUrl": "🦋" },
+  { "_id": "654c8200000000000000000e", "type": "insect", "title": "Termite", "imageUrl": "🪲" },
+  { "_id": "654c8200000000000000000f", "type": "insect", "title": "Wasp", "imageUrl": "🪰" },
+  { "_id": "654c82000000000000000010", "type": "insect", "title": "Hornet", "imageUrl": "🦟" },
+  { "_id": "654c82000000000000000011", "type": "insect", "title": "Beetle", "imageUrl": "🪲" },
+  { "_id": "654c82000000000000000012", "type": "insect", "title": "Grasshopper (Green)", "imageUrl": "🦗" },
+  { "_id": "654c82000000000000000013", "type": "insect", "title": "Weevil", "imageUrl": "🪲" },
+  { "_id": "654c82000000000000000014", "type": "insect", "title": "Termite (Flying)", "imageUrl": "🦟" }
+]

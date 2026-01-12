@@ -1,7 +1,7 @@
 import mongoose, { Schema, model, Document } from "mongoose";
 
 export interface IContent extends Document {
-  type: "letter" | "number" | "animal"  | "math" | "fruit" | "flower" | "vegtable |addition |subtraction |multiplication |division | bird |";
+  type: "letter" | "number" | "animal"  | "math" | "fruit" | "flower" | "vegtable |addition |subtraction |multiplication |division | bird | insect|";
   title?: string;
   imageUrl?: string;
   soundUrl?: string;
@@ -11,7 +11,7 @@ export interface IContent extends Document {
 }
 
 const ContentSchema = new Schema<IContent>({
-  type: { type: String, enum: ["letter","number","animal","math","fruit","flower","vegetable","bird","addition","subtraction","multiplication","division"], required: true },
+  type: { type: String, enum: ["letter","number","animal","math","fruit","flower","vegetable","bird","addition","subtraction","multiplication","division","insect"], required: true },
   title: { type: String, },
   imageUrl: String,
   soundUrl: String,
